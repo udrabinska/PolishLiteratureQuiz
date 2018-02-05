@@ -1,0 +1,67 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Polish Literature Quiz</string>
+    <string name="introduction">Have you read Szymborska, Gombrowicz, Lem, Miłosz or maybe Sapkowski? But how much do you really know about Polish literature? Check it out.  </string>
+    <string name="image_description">The first sentence written down in Polish in Book of Henrykow.</string>
+    <string name="name_hint">Write your name&#8230;</string>
+    <string name="one">1</string>
+    <string name="question_1">When was the first sentence in Polish language – „Day, ut ia pobrusa, a ti poziwai” (eng. “Let me, I shall grind, and you take a rest”) – written down?</string>
+    <string name="answer_1a">in the 10th century</string>
+    <string name="answer_1b">in the 13th century</string>
+    <string name="answer_1c">in the 15th century</string>
+    <string name="two">2</string>
+    <string name="question_2">How many Poles received the Nobel Prize for literature?</string>
+    <string name="question_2_hint">Type a number, ex. 1, 2&#8230;</string>
+    <string name="three">3</string>
+    <string name="question_3">If you knew the answer to the previous question, this one should be easy… Which Poles received the Nobel Prize for literature? (More than one answer is correct.)</string>
+    <string name="stanislaw_lem">Stanisław Lem</string>
+    <string name="wladyslaw_reymont">Władysław Reymont</string>
+    <string name="lech_walesa">Lech Wałęsa</string>
+    <string name="czeslaw_milosz">Czesław Miłosz</string>
+    <string name="wislawa_szymborska">Wisława Szymborska</string>
+    <string name="henryk_sienkiewicz">Henryk Sienkiewicz</string>
+    <string name="zbigniew_herbert">Zbigniew Herbert</string>
+    <string name="zbigniew_bauman">Zbigniew Bauman</string>
+    <string name="four">4</string>
+    <string name="question_4">Which famous fantasy character was created by Andrzej Sapkowski?</string>
+    <string name="gollum">Gollum</string>
+    <string name="king_arthur">King Arthur</string>
+    <string name="witcher">Witcher</string>
+    <string name="reaper_man">Reaper Man</string>
+    <string name="five">5</string>
+    <string name="question_5">Which poet wrote the famous Polish tongue twister “W Szczebrzeszynie chrząszcz brzmi w trzcinie”?</string>
+    <string name="boleslaw_lesmian">Bolesław Leśmian</string>
+    <string name="witold_gombrowicz">Witold Gombrowicz</string>
+    <string name="julian_tuwim">Julian Tuwim</string>
+    <string name="jan_brzechwa">Jan Brzechwa</string>
+    <string name="question_6">The national epic of Poland opens with invocation to… Lithuania. Who wrote it?</string>
+    <string name="six">6</string>
+    <string name="answer_6_hint">Write his name and surname.</string>
+    <string name="seven">7</string>
+    <string name="question_7">Which comics\’ character has something in common with Poland?</string>
+    <string name="wolverine">Wolverine</string>
+    <string name="thorgal">Thorgal</string>
+    <string name="spider_man">Spider-Man</string>
+    <string name="superman">Superman</string>
+    <string name="submit_answers_button">Submit answers</string>
+    <string name="reset">Reset quiz</string>
+    <string name="reset_warning">Want to reset the quiz? Click once more.</string>
+    <string name="score_10"><xliff:g example="Anna" id="name">%s</xliff:g>, you rule! You\'ve got <xliff:g example="10" id="score">%d</xliff:g>/10. Have you finished Polish literature course?</string>
+    <string name="score_9_8"><xliff:g example="Anna" id="name">%s</xliff:g>, you\'ve got <xliff:g example="9" id="score">%d</xliff:g>/10. If you\'re not Polish, excellent job!</string>
+    <string name="score_7_6">You\'ve got <xliff:g example="7" id="score">%d</xliff:g>/10. Well done, <xliff:g example="Anna" id="name">%s</xliff:g>! You like Polish culture, don\'t you?</string>
+    <string name="score_5_4">You\'ve got <xliff:g example="5" id="score">%d</xliff:g>/10. Not bad, <xliff:g example="Anna" id="name">%s</xliff:g>. If you\'re not Polish, you can be proud of the result!</string>
+    <string name="score_3_2_1">You\'ve got <xliff:g example="3" id="score">%d</xliff:g>/10. Were you guessing or you really know something, <xliff:g example="Anna" id="name">%s</xliff:g>?</string>
+    <string name="score_0">You\'ve got <xliff:g example="0" id="score">%d</xliff:g>/10. You know nothing. But don\'t worry, <xliff:g example="Anna" id="name">%s</xliff:g>. It isn\'t necessary to live.</string>
+    <string name="share_score">Send me score and answers</string>
+    <string name="email_subject">Polish Literature Quiz result</string>
+    <string name="email_hi">Thank you for taking part in Polish Literature Quiz.\n\n</string>
+    <string name="sending_too_soon">You cannot know the answers yet. Click submit button first.</string>
+    <string name="correct_answers">\n\nQ1. The first sentence in Polish was written down in 1270 in “Book of Henryków” – a Latin chronicle of the Cistercian abbey in Henryków in Lower Silesia.
+        \n\nQ2. The Nobel Prize for literature received four Poles.
+        \n\nQ3. They were: Henryk Sienkiewicz (1905), Władysław Reymont (1924), Czesław Miłosz (1980) and Wisława Szymborska (1996).
+        \n\nQ4. The Witcher Geralt of Rivia was created by Andrzej Sapkowski.
+        \n\nQ5. You can thank Jan Brzechwa for this beautiful sentence you\'ll never pronounce well, if you\'re not Polish.
+        \n\nQ6. “Pan Tadeusz” was written by Adam Mickiewicz. Legend has it only Polish literature students read it all.
+        \n\nQ7. Thorgal is a Belgian fantasy comic book series by the Belgian writer Jean Van Hamme and the Polish graphic artist Grzegorz Rosiński.
+        \n\nNow you know more! :)</string>
+    <string name="whatever_name">whatever your name is</string>
+</resources>

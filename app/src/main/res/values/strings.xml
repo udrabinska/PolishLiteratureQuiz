@@ -43,6 +43,7 @@
     <string name="spider_man">Spider-Man</string>
     <string name="superman">Superman</string>
     <string name="submit_answers_button">Submit answers</string>
+    <string name="show_answers_button">Show answers</string>
     <string name="reset">Reset quiz</string>
     <string name="reset_warning">Want to reset the quiz? Click once more.</string>
     <string name="score_10"><xliff:g example="Anna" id="name">%s</xliff:g>, you rule! You\'ve got <xliff:g example="10" id="score">%d</xliff:g>/10. Have you finished Polish literature course?</string>

@@ -36,6 +36,7 @@
     <string name="question_6">The national epic of Poland opens with invocation to… Lithuania. Who wrote it?</string>
     <string name="six">6</string>
     <string name="answer_6_hint">Write his name and surname.</string>
+    <string name="adam_mickiewicz">Adam Mickiewicz</string>
     <string name="seven">7</string>
     <string name="question_7">Which comics\’ character has something in common with Poland?</string>
     <string name="wolverine">Wolverine</string>
@@ -43,7 +44,6 @@
     <string name="spider_man">Spider-Man</string>
     <string name="superman">Superman</string>
     <string name="submit_answers_button">Submit answers</string>
-    <string name="show_answers_button">Show answers</string>
     <string name="reset">Reset quiz</string>
     <string name="reset_warning">Want to reset the quiz? Click once more.</string>
     <string name="score_10"><xliff:g example="Anna" id="name">%s</xliff:g>, you rule! You\'ve got <xliff:g example="10" id="score">%d</xliff:g>/10. Have you finished Polish literature course?</string>

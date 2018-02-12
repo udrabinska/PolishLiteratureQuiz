@@ -7,4 +7,5 @@
     <color name="colorSecondaryText">#757575</color>
     <color name="colorBackground">#ffffff</color>
     <color name="colorButtonLight">#BDBDBD</color>
+    <color name="colorCorrect">#358400</color>
 </resources>

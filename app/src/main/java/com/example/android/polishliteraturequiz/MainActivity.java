@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-        // restore - were "Submit" or "Reset" pressed or not? if yes, do what needed after rotation
+        // restore - were "Submit" or "Reset" pressed? if yes, do what needed after rotation
         if (savedInstanceState != null) {
             submitPressed = savedInstanceState.getBoolean("isSubmitted");
             if (submitPressed) {
@@ -192,6 +192,8 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         View focusedChild = getCurrentFocus();
 
+        // It saves the focus on the last clicked view before rotation.
+        // written with help: http://onegullibull.com/WP-OneGulliBull/?p=252
         if (focusedChild != null) {
             int focusID = focusedChild.getId();
             int cursorLoc = 0;
@@ -216,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle inState) {
         super.onRestoreInstanceState(inState);
 
+        // It restores the focus on the last clicked view before rotation (instead of last EditText)
         int focusID = inState.getInt("focusID", View.NO_ID);
 
         View focusedChild = findViewById(focusID);
@@ -227,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
                 ((EditText) focusedChild).setSelection(cursorLoc);
             }
         }
+
         inState.getBoolean("isSubmitted");
         if (submitPressed) {
             giveColorToAnswers();

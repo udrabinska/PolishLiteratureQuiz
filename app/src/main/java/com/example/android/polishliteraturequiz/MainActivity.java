@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
     boolean submitPressed;
     boolean resetClicks;
     List<CompoundButton> allButtons = new ArrayList<>();
+    private static String ANSWER_2 = "answer2";
+    private static String ANSWER_6 = "answer6";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,8 +140,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+
         // restore - were "Submit" or "Reset" pressed? if yes, do what needed after rotation
         if (savedInstanceState != null) {
+            savedInstanceState.getString("answer2");
+            nobelPrizes.setText(ANSWER_2);
+            savedInstanceState.getString("answer6");
+            mickiewicz.setText(ANSWER_6);
             submitPressed = savedInstanceState.getBoolean("isSubmitted");
             if (submitPressed) {
                 sendEmail.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
@@ -173,10 +180,15 @@ public class MainActivity extends AppCompatActivity {
                 cursorLoc = ((EditText) focusedChild).getSelectionStart();
             }
 
+            ANSWER_2 = nobelPrizes.getText().toString();
+            ANSWER_6 = mickiewicz.getText().toString();
+
             outState.putInt("focusID", focusID);
             outState.putInt("cursorLoc", cursorLoc);
             outState.putBoolean("isSubmitted", submitPressed);
             outState.putBoolean("resetClicked", resetClicks);
+            outState.putString("answer2", ANSWER_2);
+            outState.putString("answer6", ANSWER_6);
         }
     }
 
@@ -201,7 +213,8 @@ public class MainActivity extends AppCompatActivity {
                 ((EditText) focusedChild).setSelection(cursorLoc);
             }
         }
-
+        nobelPrizes.setText(ANSWER_2);
+        mickiewicz.setText(ANSWER_6);
         inState.getBoolean("isSubmitted");
         if (submitPressed) {
             giveColorToAnswers();

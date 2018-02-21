@@ -58,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
     boolean submitPressed;
     boolean resetClicks;
     List<CompoundButton> allButtons = new ArrayList<>();
-    ArrayList<CompoundButton> rightAnswers = new ArrayList<>();
-    ArrayList<CompoundButton> wrongButtons = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,57 +103,30 @@ public class MainActivity extends AppCompatActivity {
         // prevent from opening keyboard on creation
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        // add elements to All Buttons list
-        allButtons.add(tenthCentury);
+        // add elements to All Buttons list, first correct ones (0-7), then wrong (8-23)
         allButtons.add(thirteenthCentury);
-        allButtons.add(fifteenthCentury);
-        allButtons.add(lem);
         allButtons.add(reymont);
         allButtons.add(milosz);
-        allButtons.add(bauman);
         allButtons.add(szymborska);
-        allButtons.add(herbert);
         allButtons.add(sienkiewicz);
+        allButtons.add(witcher);
+        allButtons.add(brzechwa);
+        allButtons.add(thorgal);
+        allButtons.add(tenthCentury);
+        allButtons.add(fifteenthCentury);
+        allButtons.add(lem);
+        allButtons.add(bauman);
+        allButtons.add(herbert);
         allButtons.add(walesa);
         allButtons.add(gollum);
         allButtons.add(kingArthur);
-        allButtons.add(witcher);
         allButtons.add(reaperMan);
         allButtons.add(lesmian);
         allButtons.add(gombrowicz);
         allButtons.add(tuwim);
-        allButtons.add(brzechwa);
         allButtons.add(wolverine);
-        allButtons.add(thorgal);
         allButtons.add(spiderman);
         allButtons.add(superman);
-
-        // buttons - wrong answers
-        wrongButtons.add(tenthCentury);
-        wrongButtons.add(fifteenthCentury);
-        wrongButtons.add(lem);
-        wrongButtons.add(bauman);
-        wrongButtons.add(herbert);
-        wrongButtons.add(walesa);
-        wrongButtons.add(gollum);
-        wrongButtons.add(kingArthur);
-        wrongButtons.add(reaperMan);
-        wrongButtons.add(lesmian);
-        wrongButtons.add(gombrowicz);
-        wrongButtons.add(tuwim);
-        wrongButtons.add(wolverine);
-        wrongButtons.add(spiderman);
-        wrongButtons.add(superman);
-
-        // buttons - good answers
-        rightAnswers.add(thirteenthCentury);
-        rightAnswers.add(reymont);
-        rightAnswers.add(milosz);
-        rightAnswers.add(szymborska);
-        rightAnswers.add(sienkiewicz);
-        rightAnswers.add(witcher);
-        rightAnswers.add(brzechwa);
-        rightAnswers.add(thorgal);
 
         // allows RadioButtons, CheckBoxes stay focusableInTouchMode without need to click twice to check them
         for (int i = 0; i < 23; i++) {
@@ -274,12 +245,12 @@ public class MainActivity extends AppCompatActivity {
     private void giveColorToAnswers() {
         // good answers turn green - showing right answers
         for (int i = 0; i < 8; i++) {
-            rightAnswers.get(i).setTextColor(getResources().getColor(R.color.colorCorrect));
+            allButtons.get(i).setTextColor(getResources().getColor(R.color.colorCorrect));
         }
         // wrong answers in CompoundButtons turn red
-        for (int i = 0; i < 15; i++) {
-            if (wrongButtons.get(i).isChecked()) {
-                wrongButtons.get(i).setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        for (int i = 8; i < 23; i++) {
+            if (allButtons.get(i).isChecked()) {
+                allButtons.get(i).setTextColor(getResources().getColor(R.color.colorPrimaryDark));
             }
         }
 
@@ -465,4 +436,3 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 }
-

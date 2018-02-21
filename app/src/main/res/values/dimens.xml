@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="space_8dp">8dp</dimen>
-    <dimen name="space_12dp">12dp</dimen>
-    <dimen name="space_16dp">16dp</dimen>
-    <dimen name="space_18dp">18dp</dimen>
-    <dimen name="space_24dp">24dp</dimen>
+    <dimen name="little_space">8dp</dimen>
+    <dimen name="small_space">12dp</dimen>
+    <dimen name="normal_space">16dp</dimen>
+    <dimen name="bigger_space">18dp</dimen>
+    <dimen name="large_space">24dp</dimen>
     <dimen name="image_size">100dp</dimen>
-    <dimen name="size_12sp">12sp</dimen>
-    <dimen name="size_16sp">16sp</dimen>
-    <dimen name="size_18sp">18sp</dimen>
-    <dimen name="size_24sp">24sp</dimen>
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="normal_text">16sp</dimen>
+    <dimen name="bigger_text">18sp</dimen>
+    <dimen name="number_size">24sp</dimen>
 </resources>

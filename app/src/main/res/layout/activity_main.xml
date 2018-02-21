@@ -10,20 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/space_18dp">
+        android:padding="@dimen/bigger_space">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/space_16dp"
+            android:paddingBottom="@dimen/normal_space"
             android:text="@string/introduction"
-            android:textSize="@dimen/size_18sp" />
+            android:textSize="@dimen/bigger_text" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="@dimen/image_size"
             android:contentDescription="@string/image_description"
-            android:paddingBottom="@dimen/space_16dp"
+            android:paddingBottom="@dimen/normal_space"
             android:scaleType="centerCrop"
             android:src="@drawable/book_of_henrykow" />
 
@@ -261,7 +261,7 @@
             <Button
                 android:id="@+id/reset_button"
                 style="@style/ButtonsStyle"
-                android:layout_marginRight="@dimen/space_12dp"
+                android:layout_marginRight="@dimen/small_space"
                 android:layout_weight="1"
                 android:background="@color/colorButtonLight"
                 android:onClick="resetQuiz"
@@ -270,7 +270,7 @@
             <Button
                 android:id="@+id/submit_button"
                 style="@style/ButtonsStyle"
-                android:layout_marginLeft="@dimen/space_12dp"
+                android:layout_marginLeft="@dimen/small_space"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryDark"
                 android:onClick="createScoreMessage"
@@ -282,10 +282,10 @@
             android:id="@+id/send_email_button"
             style="@style/ButtonsStyle"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/size_24sp"
+            android:layout_marginBottom="@dimen/large_space"
             android:background="@color/colorButtonLight"
             android:onClick="sendScore"
             android:text="@string/share_score"
-            android:textSize="@dimen/size_12sp" />
+            android:textSize="@dimen/small_text" />
     </LinearLayout>
 </ScrollView>

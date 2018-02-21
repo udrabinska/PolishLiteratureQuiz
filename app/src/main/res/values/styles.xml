@@ -5,7 +5,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorButtonNormal">@color/colorPrimary</item>
-        <item name="android:textSize">@dimen/size_16sp</item>
+        <item name="android:textSize">@dimen/normal_text</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">serif-monospace</item>
         <item name="android:textColor">@color/colorPrimaryText</item>
@@ -22,26 +22,26 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:textSize">@dimen/size_24sp</item>
+        <item name="android:textSize">@dimen/number_size</item>
         <item name="android:gravity">center</item>
-        <item name="android:paddingTop">@dimen/space_16dp</item>
-        <item name="android:paddingBottom">@dimen/space_8dp</item>
+        <item name="android:paddingTop">@dimen/normal_space</item>
+        <item name="android:paddingBottom">@dimen/little_space</item>
     </style>
 
     <style name="QuestionsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingBottom">@dimen/space_8dp</item>
+        <item name="android:paddingBottom">@dimen/little_space</item>
     </style>
 
     <style name="AnswersStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">@dimen/space_12dp</item>
-        <item name="android:paddingTop">@dimen/space_12dp</item>
-        <item name="android:paddingLeft">@dimen/space_12dp</item>
+        <item name="android:layout_marginLeft">@dimen/small_space</item>
+        <item name="android:paddingTop">@dimen/small_space</item>
+        <item name="android:paddingLeft">@dimen/small_space</item>
         <item name="android:textColor">@color/colorSecondaryText</item>
-        <item name="android:paddingBottom">@dimen/space_12dp</item>
+        <item name="android:paddingBottom">@dimen/small_space</item>
         <item name="android:fontFamily">serif-monospace</item>
         <item name="android:focusableInTouchMode">true</item>
     </style>
@@ -49,7 +49,7 @@
     <style name="ButtonsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/space_24dp</item>
-        <item name="android:padding">@dimen/space_12dp</item>
+        <item name="android:layout_marginTop">@dimen/large_space</item>
+        <item name="android:padding">@dimen/small_space</item>
     </style>
 </resources>

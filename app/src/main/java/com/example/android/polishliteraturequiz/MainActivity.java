@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         // prevent from opening keyboard on creation
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        // add elements to All Buttons list, first correct ones (0-7), then wrong (8-23)
+        // add elements to All Buttons list, first correct ones (0-7), then wrong (8-22)
         allButtons.add(thirteenthCentury);
         allButtons.add(reymont);
         allButtons.add(milosz);

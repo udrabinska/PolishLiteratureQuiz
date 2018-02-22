@@ -56,8 +56,10 @@ public class MainActivity extends AppCompatActivity {
     Button resetButton;
     Button sendEmail;
     boolean submitPressed;
-    boolean resetClicks;
+    boolean resetClicked;
     List<CompoundButton> allButtons = new ArrayList<>();
+    // two variables to save and restore what a user wrote in Q2&6 - to show (or not)
+    // the correct answers underneath after rotation (without it was showing them always)
     private static String ANSWER_2 = "answer2";
     private static String ANSWER_6 = "answer6";
 
@@ -100,12 +102,12 @@ public class MainActivity extends AppCompatActivity {
         superman = findViewById(R.id.superman_radiobutton);
         resetButton = findViewById(R.id.reset_button);
         sendEmail = findViewById(R.id.send_email_button);
-        resetClicks = false;
+        resetClicked = false;
 
         // prevent from opening keyboard on creation
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        // add elements to All Buttons list, first correct ones (0-7), then wrong (8-22)
+        // add elements to all CompoundButtons list, first correct ones (0-7), then wrong (8-22)
         allButtons.add(thirteenthCentury);
         allButtons.add(reymont);
         allButtons.add(milosz);
@@ -153,8 +155,8 @@ public class MainActivity extends AppCompatActivity {
                 sendEmail.setTextColor(getResources().getColor(R.color.colorBackground));
                 giveColorToAnswers();
             }
-            resetClicks = savedInstanceState.getBoolean("resetClicked");
-            if (resetClicks) {
+            resetClicked = savedInstanceState.getBoolean("resetClicked");
+            if (resetClicked) {
                 resetButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                 resetButton.setTextColor(getResources().getColor(R.color.colorBackground));
             }
@@ -186,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
             outState.putInt("focusID", focusID);
             outState.putInt("cursorLoc", cursorLoc);
             outState.putBoolean("isSubmitted", submitPressed);
-            outState.putBoolean("resetClicked", resetClicks);
+            outState.putBoolean("resetClicked", resetClicked);
             outState.putString("answer2", ANSWER_2);
             outState.putString("answer6", ANSWER_6);
         }
@@ -220,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
             giveColorToAnswers();
         }
         inState.getBoolean("resetClicked");
-        if (resetClicks) {
+        if (resetClicked) {
             resetButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
             resetButton.setTextColor(getResources().getColor(R.color.colorBackground));
         }
@@ -294,13 +296,11 @@ public class MainActivity extends AppCompatActivity {
          if (thirteenthCentury.isChecked()) {
             points += 1;
         }
-
         // Check the answer to the question 2.
         String numberOfNobels = nobelPrizes.getText().toString();
         if (numberOfNobels.equals("4")) {
             points += 1;
         }
-
         // Check the correct answers to the question 3.
         if (reymont.isChecked()) {
             points += 1;
@@ -314,7 +314,6 @@ public class MainActivity extends AppCompatActivity {
         if (sienkiewicz.isChecked()) {
             points += 1;
         }
-
         // Check the answer to the question 4.
         if (witcher.isChecked()) {
             points += 1;
@@ -328,7 +327,6 @@ public class MainActivity extends AppCompatActivity {
         if (adamMickiewicz.equalsIgnoreCase("adam mickiewicz") || adamMickiewicz.equalsIgnoreCase("adam mickiewicz ")) {
             points += 1;
         }
-
         // Check the answer to the question 7.
         if (thorgal.isChecked()) {
             points += 1;
@@ -337,7 +335,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method creates a toast message with score.
+     * This method creates a toast message with score - after clicking "Submit" button.
      */
     private void displayToastMessage(String message) {
         Context context = getApplicationContext();
@@ -347,8 +345,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This happens after clicking Share button:
-     * 1. If the submit button hadn't been clicked, it makes a warning toast.
+     * This happens after clicking "Share" button:
+     * 1. If the submit button hadn't been clicked, it shows a warning toast.
      * 2. If it had been clicked, it opens e-mail app with message.
      */
     public void sendScore(View view) {
@@ -357,7 +355,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         String mailText = createMailText();
-
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
@@ -368,7 +365,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Displays message in a toast after clicking "send" button while "submit" hadn't been yet clicked.
+     * Displays toast message after clicking "send" button, in case "submit" hadn't been clicked yet.
      */
     private void displayMessageTooSoon(String shareTooSoon) {
         Context context = getApplicationContext();
@@ -378,7 +375,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method and creates the e-mail text.
+     * This method creates the e-mail text.
      */
     private String createMailText() {
         int score = calculateScore();
@@ -405,15 +402,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * What happens when "reset" button is clicked for the first and second time.
+     * What happens when "reset" button is clicked once and twice.
      */
 
     public void resetQuiz(View v) {
-        if (!resetClicks) {
+        if (!resetClicked) {
             displayResetWarning(getString(R.string.reset_warning));
             resetButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
             resetButton.setTextColor(getResources().getColor(R.color.colorBackground));
-            resetClicks = true;
+            resetClicked = true;
         } else {
             nameField.getText().clear();
             nobelPrizes.getText().clear();
@@ -434,7 +431,7 @@ public class MainActivity extends AppCompatActivity {
             sendEmailButton.setTextColor(getResources().getColor(R.color.colorPrimaryText));
             resetButton.setBackgroundColor(getResources().getColor(R.color.colorButtonLight));
             resetButton.setTextColor(getResources().getColor(R.color.colorPrimaryText));
-            resetClicks = false;
+            resetClicked = false;
             submitPressed = false;
         }
     }

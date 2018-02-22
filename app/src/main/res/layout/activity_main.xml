@@ -261,7 +261,7 @@
             <Button
                 android:id="@+id/reset_button"
                 style="@style/ButtonsStyle"
-                android:layout_marginRight="@dimen/small_space"
+                android:layout_marginEnd="@dimen/small_space"
                 android:layout_weight="1"
                 android:background="@color/colorButtonLight"
                 android:onClick="resetQuiz"
@@ -270,7 +270,7 @@
             <Button
                 android:id="@+id/submit_button"
                 style="@style/ButtonsStyle"
-                android:layout_marginLeft="@dimen/small_space"
+                android:layout_marginStart="@dimen/small_space"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryDark"
                 android:onClick="createScoreMessage"

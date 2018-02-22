@@ -12,7 +12,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +21,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     EditText nameField;
-    RadioGroup centuriesGroup;
     RadioButton tenthCentury;
     RadioButton thirteenthCentury;
     RadioButton fifteenthCentury;
@@ -36,19 +34,16 @@ public class MainActivity extends AppCompatActivity {
     CheckBox herbert;
     CheckBox sienkiewicz;
     CheckBox walesa;
-    RadioGroup fantasyGroup;
     RadioButton gollum;
     RadioButton kingArthur;
     RadioButton witcher;
     RadioButton reaperMan;
-    RadioGroup poetsGroup;
     RadioButton lesmian;
     RadioButton gombrowicz;
     RadioButton tuwim;
     RadioButton brzechwa;
     EditText mickiewicz;
     TextView correctAnswer6;
-    RadioGroup comicGroup;
     RadioButton wolverine;
     RadioButton thorgal;
     RadioButton spiderman;
@@ -69,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         nameField = findViewById(R.id.name_view);
-        centuriesGroup = findViewById(R.id.century_group);
         tenthCentury = findViewById(R.id.tenth_century);
         thirteenthCentury = findViewById(R.id.thirteenth_century);
         fifteenthCentury = findViewById(R.id.fifteenth_century);
@@ -83,19 +77,16 @@ public class MainActivity extends AppCompatActivity {
         herbert = findViewById(R.id.herbert_checkbox);
         sienkiewicz = findViewById(R.id.sienkiewicz_checkbox);
         walesa = findViewById(R.id.walesa_checkbox);
-        fantasyGroup = findViewById(R.id.fantasy_group);
         gollum = findViewById(R.id.gollum_radiobutton);
         kingArthur = findViewById(R.id.king_arthur_radiobutton);
         witcher = findViewById(R.id.witcher_radiobutton);
         reaperMan = findViewById(R.id.reaper_man_radiobutton);
-        poetsGroup = findViewById(R.id.poets_group);
         lesmian = findViewById(R.id.lesmian_radiobutton);
         gombrowicz = findViewById(R.id.gombrowicz_radiobutton);
         tuwim = findViewById(R.id.tuwim_radiobutton);
         brzechwa = findViewById(R.id.brzechwa_radiobutton);
         mickiewicz = findViewById(R.id.adam_mickiewicz_edittext);
         correctAnswer6 = findViewById(R.id.correct_6);
-        comicGroup = findViewById(R.id.comic_group);
         wolverine = findViewById(R.id.wolverine_radiobutton);
         thorgal = findViewById(R.id.thorgal_radiobutton);
         spiderman = findViewById(R.id.spiderman_radiobutton);

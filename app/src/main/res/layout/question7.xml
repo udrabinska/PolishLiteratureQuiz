@@ -1,0 +1,35 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        style="@style/NumberQuestionStyle"
+        android:text="@string/seven" />
+
+    <TextView
+        style="@style/QuestionsStyle"
+        android:text="@string/question_7" />
+
+    <RadioGroup
+        android:id="@+id/comic_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/wolverine_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/wolverine" />
+
+        <RadioButton
+            android:id="@+id/thorgal_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/thorgal" />
+
+        <RadioButton
+            android:id="@+id/spiderman_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/spider_man" />
+
+        <RadioButton
+            android:id="@+id/superman_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/superman" />
+    </RadioGroup>
+</merge>

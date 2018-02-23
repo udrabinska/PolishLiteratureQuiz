@@ -1,0 +1,31 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        style="@style/NumberQuestionStyle"
+        android:text="@string/one" />
+
+    <TextView
+        style="@style/QuestionsStyle"
+        android:text="@string/question_1" />
+
+    <RadioGroup
+        android:id="@+id/century_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/tenth_century"
+            style="@style/AnswersStyle"
+            android:text="@string/answer_1a" />
+
+        <RadioButton
+            android:id="@+id/thirteenth_century"
+            style="@style/AnswersStyle"
+            android:text="@string/answer_1b" />
+
+        <RadioButton
+            android:id="@+id/fifteenth_century"
+            style="@style/AnswersStyle"
+            android:text="@string/answer_1c" />
+    </RadioGroup>
+</merge>

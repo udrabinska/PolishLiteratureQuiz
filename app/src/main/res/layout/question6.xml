@@ -1,0 +1,21 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        style="@style/NumberQuestionStyle"
+        android:text="@string/six" />
+
+    <TextView
+        style="@style/QuestionsStyle"
+        android:text="@string/question_6" />
+
+    <EditText
+        android:id="@+id/adam_mickiewicz_edittext"
+        style="@style/EditablesStyle"
+        android:hint="@string/answer_6_hint"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/correct_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorCorrect" />
+</merge>

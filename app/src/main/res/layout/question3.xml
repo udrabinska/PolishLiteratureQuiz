@@ -1,0 +1,50 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        style="@style/NumberQuestionStyle"
+        android:text="@string/three" />
+
+    <TextView
+        style="@style/QuestionsStyle"
+        android:text="@string/question_3" />
+
+    <CheckBox
+        android:id="@+id/lem_checkbox"
+        style="@style/AnswersStyle"
+        android:text="@string/stanislaw_lem" />
+
+    <CheckBox
+        android:id="@+id/reymont_checkbox"
+        style="@style/AnswersStyle"
+        android:text="@string/wladyslaw_reymont" />
+
+    <CheckBox
+        android:id="@+id/milosz_checkbox"
+        style="@style/AnswersStyle"
+        android:text="@string/czeslaw_milosz" />
+
+    <CheckBox
+        android:id="@+id/bauman_checkbox"
+        style="@style/AnswersStyle"
+        android:text="@string/zbigniew_bauman" />
+
+    <CheckBox
+        android:id="@+id/szymborska_checkbox"
+        style="@style/AnswersStyle"
+        android:text="@string/wislawa_szymborska" />
+
+    <CheckBox
+        android:id="@+id/herbert_checkbox"
+        style="@style/AnswersStyle"
+        android:text="@string/zbigniew_herbert" />
+
+    <CheckBox
+        android:id="@+id/sienkiewicz_checkbox"
+        style="@style/AnswersStyle"
+        android:text="@string/henryk_sienkiewicz" />
+
+    <CheckBox
+        android:id="@+id/walesa_checkbox"
+        style="@style/AnswersStyle"
+        android:text="@string/lech_walesa" />
+</merge>

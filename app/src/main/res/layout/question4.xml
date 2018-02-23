@@ -1,0 +1,35 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        style="@style/NumberQuestionStyle"
+        android:text="@string/four" />
+
+    <TextView
+        style="@style/QuestionsStyle"
+        android:text="@string/question_4" />
+
+    <RadioGroup
+        android:id="@+id/fantasy_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/gollum_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/gollum" />
+
+        <RadioButton
+            android:id="@+id/king_arthur_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/king_arthur" />
+
+        <RadioButton
+            android:id="@+id/witcher_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/witcher" />
+
+        <RadioButton
+            android:id="@+id/reaper_man_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/reaper_man" />
+    </RadioGroup>
+</merge>

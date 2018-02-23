@@ -1,0 +1,35 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        style="@style/NumberQuestionStyle"
+        android:text="@string/five" />
+
+    <TextView
+        style="@style/QuestionsStyle"
+        android:text="@string/question_5" />
+
+    <RadioGroup
+        android:id="@+id/poets_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/lesmian_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/boleslaw_lesmian" />
+
+        <RadioButton
+            android:id="@+id/gombrowicz_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/witold_gombrowicz" />
+
+        <RadioButton
+            android:id="@+id/tuwim_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/julian_tuwim" />
+
+        <RadioButton
+            android:id="@+id/brzechwa_radiobutton"
+            style="@style/AnswersStyle"
+            android:text="@string/jan_brzechwa" />
+    </RadioGroup>
+</merge>

@@ -1,0 +1,26 @@
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:showIn="@layout/activity_main">
+
+    <Button
+        android:id="@+id/reset_button"
+        style="@style/ButtonsStyle"
+        android:layout_marginEnd="@dimen/small_space"
+        android:layout_weight="1"
+        android:background="@color/colorButtonLight"
+        android:onClick="resetQuiz"
+        android:text="@string/reset" />
+
+    <Button
+        android:id="@+id/submit_button"
+        style="@style/ButtonsStyle"
+        android:layout_marginStart="@dimen/small_space"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="createScoreMessage"
+        android:text="@string/submit_answers_button"
+        android:textColor="@color/colorBackground" />
+</LinearLayout>

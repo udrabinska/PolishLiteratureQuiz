@@ -2,6 +2,7 @@ package com.example.android.polishliteraturequiz;
 
 import android.content.Context;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.android.polishliteraturequiz.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         nameField = findViewById(R.id.name_view);
         tenthCentury = findViewById(R.id.tenth_century);

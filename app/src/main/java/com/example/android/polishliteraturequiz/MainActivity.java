@@ -8,12 +8,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.polishliteraturequiz.databinding.ActivityMainBinding;
@@ -23,36 +19,6 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    EditText nameField;
-    RadioButton tenthCentury;
-    RadioButton thirteenthCentury;
-    RadioButton fifteenthCentury;
-    EditText nobelPrizes;
-    TextView correctAnswer2;
-    CheckBox lem;
-    CheckBox reymont;
-    CheckBox milosz;
-    CheckBox bauman;
-    CheckBox szymborska;
-    CheckBox herbert;
-    CheckBox sienkiewicz;
-    CheckBox walesa;
-    RadioButton gollum;
-    RadioButton kingArthur;
-    RadioButton witcher;
-    RadioButton reaperMan;
-    RadioButton lesmian;
-    RadioButton gombrowicz;
-    RadioButton tuwim;
-    RadioButton brzechwa;
-    EditText mickiewicz;
-    TextView correctAnswer6;
-    RadioButton wolverine;
-    RadioButton thorgal;
-    RadioButton spiderman;
-    RadioButton superman;
-    Button resetButton;
-    Button sendEmail;
     boolean submitPressed;
     boolean resetClicked;
     List<CompoundButton> allButtons = new ArrayList<>();
@@ -60,71 +26,40 @@ public class MainActivity extends AppCompatActivity {
     // the correct answers underneath after rotation (without it was showing them always)
     private static String ANSWER_2 = "answer2";
     private static String ANSWER_6 = "answer6";
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        nameField = findViewById(R.id.name_view);
-        tenthCentury = findViewById(R.id.tenth_century);
-        thirteenthCentury = findViewById(R.id.thirteenth_century);
-        fifteenthCentury = findViewById(R.id.fifteenth_century);
-        nobelPrizes = findViewById(R.id.number_of_prizes);
-        correctAnswer2 = findViewById(R.id.correct_2);
-        lem = findViewById(R.id.lem_checkbox);
-        reymont = findViewById(R.id.reymont_checkbox);
-        milosz = findViewById(R.id.milosz_checkbox);
-        bauman = findViewById(R.id.bauman_checkbox);
-        szymborska = findViewById(R.id.szymborska_checkbox);
-        herbert = findViewById(R.id.herbert_checkbox);
-        sienkiewicz = findViewById(R.id.sienkiewicz_checkbox);
-        walesa = findViewById(R.id.walesa_checkbox);
-        gollum = findViewById(R.id.gollum_radiobutton);
-        kingArthur = findViewById(R.id.king_arthur_radiobutton);
-        witcher = findViewById(R.id.witcher_radiobutton);
-        reaperMan = findViewById(R.id.reaper_man_radiobutton);
-        lesmian = findViewById(R.id.lesmian_radiobutton);
-        gombrowicz = findViewById(R.id.gombrowicz_radiobutton);
-        tuwim = findViewById(R.id.tuwim_radiobutton);
-        brzechwa = findViewById(R.id.brzechwa_radiobutton);
-        mickiewicz = findViewById(R.id.adam_mickiewicz_edittext);
-        correctAnswer6 = findViewById(R.id.correct_6);
-        wolverine = findViewById(R.id.wolverine_radiobutton);
-        thorgal = findViewById(R.id.thorgal_radiobutton);
-        spiderman = findViewById(R.id.spiderman_radiobutton);
-        superman = findViewById(R.id.superman_radiobutton);
-        resetButton = findViewById(R.id.reset_button);
-        sendEmail = findViewById(R.id.send_email_button);
         resetClicked = false;
-
         // prevent from opening keyboard on creation
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-
         // add elements to all CompoundButtons list, first correct ones (0-7), then wrong (8-22)
-        allButtons.add(thirteenthCentury);
-        allButtons.add(reymont);
-        allButtons.add(milosz);
-        allButtons.add(szymborska);
-        allButtons.add(sienkiewicz);
-        allButtons.add(witcher);
-        allButtons.add(brzechwa);
-        allButtons.add(thorgal);
-        allButtons.add(tenthCentury);
-        allButtons.add(fifteenthCentury);
-        allButtons.add(lem);
-        allButtons.add(bauman);
-        allButtons.add(herbert);
-        allButtons.add(walesa);
-        allButtons.add(gollum);
-        allButtons.add(kingArthur);
-        allButtons.add(reaperMan);
-        allButtons.add(lesmian);
-        allButtons.add(gombrowicz);
-        allButtons.add(tuwim);
-        allButtons.add(wolverine);
-        allButtons.add(spiderman);
-        allButtons.add(superman);
+        allButtons.add(binding.thirteenthCentury);
+        allButtons.add(binding.reymontCheckbox);
+        allButtons.add(binding.miloszCheckbox);
+        allButtons.add(binding.szymborskaCheckbox);
+        allButtons.add(binding.sienkiewiczCheckbox);
+        allButtons.add(binding.witcherRadiobutton);
+        allButtons.add(binding.brzechwaRadiobutton);
+        allButtons.add(binding.thorgalRadiobutton);
+        allButtons.add(binding.tenthCentury);
+        allButtons.add(binding.fifteenthCentury);
+        allButtons.add(binding.lemCheckbox);
+        allButtons.add(binding.baumanCheckbox);
+        allButtons.add(binding.herbertCheckbox);
+        allButtons.add(binding.walesaCheckbox);
+        allButtons.add(binding.gollumRadiobutton);
+        allButtons.add(binding.kingArthurRadiobutton);
+        allButtons.add(binding.reaperManRadiobutton);
+        allButtons.add(binding.lesmianRadiobutton);
+        allButtons.add(binding.gombrowiczRadiobutton);
+        allButtons.add(binding.tuwimRadiobutton);
+        allButtons.add(binding.wolverineRadiobutton);
+        allButtons.add(binding.spidermanRadiobutton);
+        allButtons.add(binding.supermanRadiobutton);
 
         // allows RadioButtons, CheckBoxes stay focusableInTouchMode without need to click twice to check them
         for (int i = 0; i < 23; i++) {
@@ -140,19 +75,19 @@ public class MainActivity extends AppCompatActivity {
         // restore - were "Submit" or "Reset" pressed? if yes, do what needed after rotation
         if (savedInstanceState != null) {
             savedInstanceState.getString("answer2");
-            nobelPrizes.setText(ANSWER_2);
+            binding.numberOfPrizes.setText(ANSWER_2);
             savedInstanceState.getString("answer6");
-            mickiewicz.setText(ANSWER_6);
+            binding.adamMickiewiczEdittext.setText(ANSWER_6);
             submitPressed = savedInstanceState.getBoolean("isSubmitted");
             if (submitPressed) {
-                sendEmail.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                sendEmail.setTextColor(getResources().getColor(R.color.colorBackground));
+                binding.sendEmailButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                binding.sendEmailButton.setTextColor(getResources().getColor(R.color.colorBackground));
                 giveColorToAnswers();
             }
             resetClicked = savedInstanceState.getBoolean("resetClicked");
             if (resetClicked) {
-                resetButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                resetButton.setTextColor(getResources().getColor(R.color.colorBackground));
+                binding.resetButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                binding.resetButton.setTextColor(getResources().getColor(R.color.colorBackground));
             }
         }
     }
@@ -176,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
                 cursorLoc = ((EditText) focusedChild).getSelectionStart();
             }
 
-            ANSWER_2 = nobelPrizes.getText().toString();
-            ANSWER_6 = mickiewicz.getText().toString();
+            ANSWER_2 = binding.numberOfPrizes.getText().toString();
+            ANSWER_6 = binding.adamMickiewiczEdittext.getText().toString();
 
             outState.putInt("focusID", focusID);
             outState.putInt("cursorLoc", cursorLoc);
@@ -209,16 +144,16 @@ public class MainActivity extends AppCompatActivity {
                 ((EditText) focusedChild).setSelection(cursorLoc);
             }
         }
-        nobelPrizes.setText(ANSWER_2);
-        mickiewicz.setText(ANSWER_6);
+        binding.numberOfPrizes.setText(ANSWER_2);
+        binding.adamMickiewiczEdittext.setText(ANSWER_6);
         inState.getBoolean("isSubmitted");
         if (submitPressed) {
             giveColorToAnswers();
         }
         inState.getBoolean("resetClicked");
         if (resetClicked) {
-            resetButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-            resetButton.setTextColor(getResources().getColor(R.color.colorBackground));
+            binding.resetButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+            binding.resetButton.setTextColor(getResources().getColor(R.color.colorBackground));
         }
    }
 
@@ -227,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void createScoreMessage(View view) {
         int score = calculateScore();
-        String name = nameField.getText().toString();
+        String name = binding.nameView.getText().toString();
         if (name.equals("")) {
             name = getString(R.string.whatever_name);
         }
@@ -245,8 +180,8 @@ public class MainActivity extends AppCompatActivity {
             displayToastMessage(getString(R.string.score_0, score, name));
         }
         submitPressed = true;
-        sendEmail.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-        sendEmail.setTextColor(getResources().getColor(R.color.colorBackground));
+        binding.sendEmailButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+        binding.sendEmailButton.setTextColor(getResources().getColor(R.color.colorBackground));
 
         giveColorToAnswers();
     }
@@ -264,20 +199,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // EditTexts (Q2 and Q6): good answers --> green, bad --> red
-        String answerTwo = nobelPrizes.getText().toString();
+        String answerTwo = binding.numberOfPrizes.getText().toString();
         if (answerTwo.equals("4")) {
-            nobelPrizes.setTextColor(getResources().getColor(R.color.colorCorrect));
+            binding.numberOfPrizes.setTextColor(getResources().getColor(R.color.colorCorrect));
         } else {
-            nobelPrizes.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
-            correctAnswer2.setText(getString(R.string.four));
+            binding.numberOfPrizes.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+            binding.correctAnswer2.setText(getString(R.string.four));
         }
 
-        String answerSix = mickiewicz.getText().toString();
+        String answerSix = binding.adamMickiewiczEdittext.getText().toString();
         if (answerSix.equalsIgnoreCase("adam mickiewicz") || answerSix.equalsIgnoreCase("adam mickiewicz ")) {
-            mickiewicz.setTextColor(getResources().getColor(R.color.colorCorrect));
+            binding.adamMickiewiczEdittext.setTextColor(getResources().getColor(R.color.colorCorrect));
         } else {
-            mickiewicz.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
-            correctAnswer6.setText(getString(R.string.adam_mickiewicz));
+            binding.adamMickiewiczEdittext.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+            binding.correctAnswer6.setText(getString(R.string.adam_mickiewicz));
         }
 }
 
@@ -287,42 +222,42 @@ public class MainActivity extends AppCompatActivity {
     private int calculateScore() {
         // Check the answer to the question 1.
         int points = 0;
-         if (thirteenthCentury.isChecked()) {
+         if (binding.thirteenthCentury.isChecked()) {
             points += 1;
         }
         // Check the answer to the question 2.
-        String numberOfNobels = nobelPrizes.getText().toString();
+        String numberOfNobels = binding.numberOfPrizes.getText().toString();
         if (numberOfNobels.equals("4")) {
             points += 1;
         }
         // Check the correct answers to the question 3.
-        if (reymont.isChecked()) {
+        if (binding.reymontCheckbox.isChecked()) {
             points += 1;
         }
-        if (milosz.isChecked()) {
+        if (binding.miloszCheckbox.isChecked()) {
             points += 1;
         }
-        if (szymborska.isChecked()) {
+        if (binding.szymborskaCheckbox.isChecked()) {
             points += 1;
         }
-        if (sienkiewicz.isChecked()) {
+        if (binding.sienkiewiczCheckbox.isChecked()) {
             points += 1;
         }
         // Check the answer to the question 4.
-        if (witcher.isChecked()) {
+        if (binding.witcherRadiobutton.isChecked()) {
             points += 1;
         }
         // Check the answer to the question 5.
-        if (brzechwa.isChecked()) {
+        if (binding.brzechwaRadiobutton.isChecked()) {
             points += 1;
         }
         // Check the answer to the question 6.
-        String adamMickiewicz = mickiewicz.getText().toString();
+        String adamMickiewicz = binding.adamMickiewiczEdittext.getText().toString();
         if (adamMickiewicz.equalsIgnoreCase("adam mickiewicz") || adamMickiewicz.equalsIgnoreCase("adam mickiewicz ")) {
             points += 1;
         }
         // Check the answer to the question 7.
-        if (thorgal.isChecked()) {
+        if (binding.thorgalRadiobutton.isChecked()) {
             points += 1;
         }
         return points;
@@ -373,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private String createMailText() {
         int score = calculateScore();
-        String name = nameField.getText().toString();
+        String name = binding.nameView.getText().toString();
         if (name.equals("")) {
             name = getString(R.string.whatever_name);
         }
@@ -402,29 +337,28 @@ public class MainActivity extends AppCompatActivity {
     public void resetQuiz(View v) {
         if (!resetClicked) {
             displayResetWarning(getString(R.string.reset_warning));
-            resetButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-            resetButton.setTextColor(getResources().getColor(R.color.colorBackground));
+            binding.resetButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+            binding.resetButton.setTextColor(getResources().getColor(R.color.colorBackground));
             resetClicked = true;
         } else {
-            nameField.getText().clear();
-            nobelPrizes.getText().clear();
-            correctAnswer2.setText("");
-            mickiewicz.getText().clear();
-            correctAnswer6.setText("");
+            binding.nameView.getText().clear();
+            binding.numberOfPrizes.getText().clear();
+            binding.correctAnswer2.setText("");
+            binding.adamMickiewiczEdittext.getText().clear();
+            binding.correctAnswer6.setText("");
 
             for (int i = 0; i < 23; i++) {
                 allButtons.get(i).setTextColor(getResources().getColor(R.color.colorSecondaryText));
                 allButtons.get(i).setChecked(false);
             }
-            nobelPrizes.setTextColor(getResources().getColor(R.color.colorSecondaryText));
-            mickiewicz.setTextColor(getResources().getColor(R.color.colorSecondaryText));
-            nameField.requestFocus();
+            binding.numberOfPrizes.setTextColor(getResources().getColor(R.color.colorSecondaryText));
+            binding.adamMickiewiczEdittext.setTextColor(getResources().getColor(R.color.colorSecondaryText));
+            binding.nameView.requestFocus();
 
-            Button sendEmailButton = findViewById(R.id.send_email_button);
-            sendEmailButton.setBackgroundColor(getResources().getColor(R.color.colorButtonLight));
-            sendEmailButton.setTextColor(getResources().getColor(R.color.colorPrimaryText));
-            resetButton.setBackgroundColor(getResources().getColor(R.color.colorButtonLight));
-            resetButton.setTextColor(getResources().getColor(R.color.colorPrimaryText));
+            binding.sendEmailButton.setBackgroundColor(getResources().getColor(R.color.colorButtonLight));
+            binding.sendEmailButton.setTextColor(getResources().getColor(R.color.colorPrimaryText));
+            binding.resetButton.setBackgroundColor(getResources().getColor(R.color.colorButtonLight));
+            binding.resetButton.setTextColor(getResources().getColor(R.color.colorPrimaryText));
             resetClicked = false;
             submitPressed = false;
         }

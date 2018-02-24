@@ -80,7 +80,7 @@
                 android:inputType="number" />
 
             <TextView
-                android:id="@+id/correct_2"
+                android:id="@+id/correct_answer2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorCorrect" />
@@ -216,7 +216,7 @@
                 android:inputType="textCapWords" />
 
             <TextView
-                android:id="@+id/correct_6"
+                android:id="@+id/correct_answer6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorCorrect" />

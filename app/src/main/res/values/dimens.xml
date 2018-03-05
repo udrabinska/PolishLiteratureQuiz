@@ -5,7 +5,6 @@
     <dimen name="normal_space">16dp</dimen>
     <dimen name="bigger_space">18dp</dimen>
     <dimen name="large_space">24dp</dimen>
-    <dimen name="image_size">100dp</dimen>
     <dimen name="small_text">12sp</dimen>
     <dimen name="normal_text">16sp</dimen>
     <dimen name="bigger_text">18sp</dimen>

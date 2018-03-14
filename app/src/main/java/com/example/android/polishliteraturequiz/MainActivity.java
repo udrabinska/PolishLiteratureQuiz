@@ -167,17 +167,17 @@ public class MainActivity extends AppCompatActivity {
             name = getString(R.string.whatever_name);
         }
         if (score == 10) {
-            displayToastMessage(getString(R.string.score_10, name, score));
+            displayToast(getString(R.string.score_10, name, score));
         } else if (score >= 8) {
-            displayToastMessage(getString(R.string.score_9_8, name, score));
+            displayToast(getString(R.string.score_9_8, name, score));
         } else if (score >= 6) {
-            displayToastMessage(getString(R.string.score_7_6, score, name));
+            displayToast(getString(R.string.score_7_6, score, name));
         } else if (score >= 4) {
-            displayToastMessage(getString(R.string.score_5_4, score, name));
+            displayToast(getString(R.string.score_5_4, score, name));
         } else if (score >= 1) {
-            displayToastMessage(getString(R.string.score_3_2_1, score, name));
+            displayToast(getString(R.string.score_3_2_1, score, name));
         } else if (score == 0) {
-            displayToastMessage(getString(R.string.score_0, score, name));
+            displayToast(getString(R.string.score_0, score, name));
         }
         submitPressed = true;
         binding.sendEmailButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
@@ -264,9 +264,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method creates a toast message with score - after clicking "Submit" button.
+     * This displays all 3 toasts (with 3 different messages - depends on input):
+     * 1. with score - after clicking "Submit" button.
+     * 2. after clicking "send" button, in case "submit" hadn't been clicked yet.
+     * 3. after the first click "Reset" button.
      */
-    private void displayToastMessage(String message) {
+    private void displayToast(String message) {
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_LONG;
         Toast toast = Toast.makeText(context, message, duration);
@@ -280,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void sendScore(View view) {
         if (!submitPressed) {
-            displayMessageTooSoon(getString(R.string.sending_too_soon));
+            displayToast(getString(R.string.sending_too_soon));
             return;
         }
         String mailText = createMailText();
@@ -291,16 +294,6 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-    }
-
-    /**
-     * Displays toast message after clicking "send" button, in case "submit" hadn't been clicked yet.
-     */
-    private void displayMessageTooSoon(String shareTooSoon) {
-        Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, shareTooSoon, duration);
-        toast.show();
     }
 
     /**
@@ -336,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void resetQuiz(View v) {
         if (!resetClicked) {
-            displayResetWarning(getString(R.string.reset_warning));
+            displayToast(getString(R.string.reset_warning));
             binding.resetButton.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
             binding.resetButton.setTextColor(getResources().getColor(R.color.colorBackground));
             resetClicked = true;
@@ -362,15 +355,5 @@ public class MainActivity extends AppCompatActivity {
             resetClicked = false;
             submitPressed = false;
         }
-    }
-
-    /**
-     * It displays warning after the first click "Reset" button.
-     */
-    private void displayResetWarning(String warningReset) {
-        Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, warningReset, duration);
-        toast.show();
     }
 }

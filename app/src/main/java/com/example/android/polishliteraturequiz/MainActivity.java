@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // Check the answer to the question 6.
         String adamMickiewicz = binding.adamMickiewiczEdittext.getText().toString();
-        if (adamMickiewicz.equalsIgnoreCase("adam mickiewicz") || adamMickiewicz.equalsIgnoreCase("adam mickiewicz ")) {
+        if (adamMickiewicz.trim().equalsIgnoreCase("adam mickiewicz")) {
             points += 1;
         }
         // Check the answer to the question 7.
